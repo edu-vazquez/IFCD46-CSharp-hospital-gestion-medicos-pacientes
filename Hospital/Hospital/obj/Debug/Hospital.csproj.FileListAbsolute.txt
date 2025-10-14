@@ -1,0 +1,8 @@
+C:\Users\Alumne_tarda1\source\repos\IFCD46-CSharp-hospital-gestion-medicos-pacientes\Hospital\Hospital\bin\Debug\Hospital.exe.config
+C:\Users\Alumne_tarda1\source\repos\IFCD46-CSharp-hospital-gestion-medicos-pacientes\Hospital\Hospital\bin\Debug\Hospital.exe
+C:\Users\Alumne_tarda1\source\repos\IFCD46-CSharp-hospital-gestion-medicos-pacientes\Hospital\Hospital\bin\Debug\Hospital.pdb
+C:\Users\Alumne_tarda1\source\repos\IFCD46-CSharp-hospital-gestion-medicos-pacientes\Hospital\Hospital\obj\Debug\Hospital.csproj.AssemblyReference.cache
+C:\Users\Alumne_tarda1\source\repos\IFCD46-CSharp-hospital-gestion-medicos-pacientes\Hospital\Hospital\obj\Debug\Hospital.csproj.CoreCompileInputs.cache
+C:\Users\Alumne_tarda1\source\repos\IFCD46-CSharp-hospital-gestion-medicos-pacientes\Hospital\Hospital\obj\Debug\Hospital.exe
+C:\Users\Alumne_tarda1\source\repos\IFCD46-CSharp-hospital-gestion-medicos-pacientes\Hospital\Hospital\obj\Debug\Hospital.pdb
+C:\Users\Alumne_tarda1\source\repos\IFCD46-CSharp-hospital-gestion-medicos-pacientes\Hospital\Hospital\obj\Debug\Hospital.exe.config
