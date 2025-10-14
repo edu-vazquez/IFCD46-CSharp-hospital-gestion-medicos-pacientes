@@ -17,22 +17,22 @@ namespace Hospital
             Pacientes = new List<Paciente>();
         }
 
-        public void AgregarMedico(Medico medico)
+        public void AltaMedico(Medico medico)
         {
             Medicos.Add(medico);
         }
 
-        public void EliminarMedico(Medico medico)
+        public void BajaMedico(Medico medico)
         {
             Medicos.Remove(medico);
         }   
 
-        public void AgregarPaciente(Paciente paciente)
+        public void AltaPaciente(Paciente paciente)
         {
             Pacientes.Add(paciente);
         }
 
-        public void EliminarPaciente(Paciente paciente)
+        public void BajaPaciente(Paciente paciente)
         {
             Pacientes.Remove(paciente);
         }

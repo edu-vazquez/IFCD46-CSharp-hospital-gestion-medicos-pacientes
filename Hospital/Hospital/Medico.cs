@@ -10,6 +10,7 @@ namespace Hospital
     {
         public string Especialidad { get; set; }
         public List<Paciente> PacientesAsignados { get; set; }
+
         public Medico(string nombre, string apellido, int edad, string especialidad)
             : base(nombre, apellido, edad)
         {

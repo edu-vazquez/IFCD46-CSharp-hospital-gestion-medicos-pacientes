@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hospital
 {
-    internal class Paciente
+    public class Paciente
     {
         public string Nombre { get; set; }
         public string Apellido { get; set; }
@@ -25,11 +25,9 @@ namespace Hospital
         public override string ToString()
         {
             return  $"Nombre: {Nombre}, " +
-                    $"Apellido: {Apellido}, " +
+                    "Apellido: {Apellido}, " +
                     $"Edad: {Edad}, " +
-                    $"Medico Asignado: {(MedicoAsignado == null ? 
-                        "Ninguno" : 
-                        MedicoAsignado.Nombre + " " + MedicoAsignado.Apellido)}.";
+                    $"Medico Asignado: {(MedicoAsignado == null ? "Ninguno" : MedicoAsignado.Nombre + " " + MedicoAsignado.Apellido)}.";
         }
     }
 }

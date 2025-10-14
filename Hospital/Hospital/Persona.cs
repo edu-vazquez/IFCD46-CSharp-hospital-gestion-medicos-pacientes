@@ -19,7 +19,7 @@ namespace Hospital
         // o sino el metodo ToString devuelve el nombre completo de la clase
         public override string ToString()
         {
-            return $"Nombre: {Nombre}, Apellido: {Apellido}, Edad: {Edad}.";
+            return $"Nombre: {Nombre}, Apellido: {Apellido}, Edad: {Edad}";
         }
     }
 }
