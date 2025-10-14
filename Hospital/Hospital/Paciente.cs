@@ -19,5 +19,17 @@ namespace Hospital
             Edad = edad;
             MedicoAsignado = null;
         }
+
+        // se hace un override del metodo ToString para mostrar la informacion del paciente
+        // o sino el metodo ToString devuelve el nombre completo de la clase
+        public override string ToString()
+        {
+            return  $"Nombre: {Nombre}, " +
+                    $"Apellido: {Apellido}, " +
+                    $"Edad: {Edad}, " +
+                    $"Medico Asignado: {(MedicoAsignado == null ? 
+                        "Ninguno" : 
+                        MedicoAsignado.Nombre + " " + MedicoAsignado.Apellido)}.";
+        }
     }
 }

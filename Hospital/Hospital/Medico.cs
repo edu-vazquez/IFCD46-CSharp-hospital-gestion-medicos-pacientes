@@ -16,5 +16,12 @@ namespace Hospital
             Especialidad = especialidad;
             PacientesAsignados = new List<Paciente>();
         }
+
+        // se hace un override del metodo ToString para mostrar la informacion del medico
+        // o sino el metodo ToString devuelve el nombre completo de la clase
+        public override string ToString()
+        {
+            return base.ToString() + $", Especialidad: {Especialidad}";
+        }
     }
 }

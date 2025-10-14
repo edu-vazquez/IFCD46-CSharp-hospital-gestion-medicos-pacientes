@@ -14,5 +14,12 @@ namespace Hospital
             Apellido = apellido;
             Edad = edad;
         }
+
+        // se hace un override del metodo ToString para mostrar la informacion de la persona
+        // o sino el metodo ToString devuelve el nombre completo de la clase
+        public override string ToString()
+        {
+            return $"Nombre: {Nombre}, Apellido: {Apellido}, Edad: {Edad}.";
+        }
     }
 }
