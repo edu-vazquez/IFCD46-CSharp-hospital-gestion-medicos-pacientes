@@ -1,8 +1,11 @@
-Gestión de Médicos y Pacientes, en un hospital
+# CURSO [IFCD46] Desenvolupament web amb ASP .Net i C#
 
-Utilizar los mecanismos de la POO. 
+## Ejerccicio POO - Polimorfismo - Herencia - Abstracción - Encapsulamiento
 
- 
+### Gestión de Médicos y Pacientes, en un hospital
+
+
+**Utilizar los mecanismos de la POO.**
 
 Crear una aplicación de consola, con un menú, que permita: 
 
@@ -15,7 +18,5 @@ Crear una aplicación de consola, con un menú, que permita:
 • Listar los médicos, pacientes, o pacientes de un medico 
 
 • Ver la lista de todas las personas del hospital 
-
- 
 
 • Redefinir el método ToString() para cada clase, aprovechando el método de la superclase base.ToString(). 
