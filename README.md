@@ -20,3 +20,5 @@ Crear una aplicación de consola, con un menú, que permita:
 • Ver la lista de todas las personas del hospital 
 
 • Redefinir el método ToString() para cada clase, aprovechando el método de la superclase base.ToString(). 
+
+[Ver contenido del curso](https://drive.google.com/drive/folders/1erBtfI0LjbR4ke71WeuzrW_Zb05eN5Nt?usp=drive_link)
