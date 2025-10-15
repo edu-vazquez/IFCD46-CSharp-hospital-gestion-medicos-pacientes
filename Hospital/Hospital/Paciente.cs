@@ -10,13 +10,11 @@ namespace Hospital
     {
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public int Edad { get; set; }
         public Medico MedicoAsignado { get; set; }
-        public Paciente(string nombre, string apellido, int edad)
+        public Paciente(string nombre, string apellido)
         {
             Nombre = nombre;
             Apellido = apellido;
-            Edad = edad;
             MedicoAsignado = null;
         }
 
@@ -25,8 +23,7 @@ namespace Hospital
         public override string ToString()
         {
             return  $"Nombre: {Nombre}, " +
-                    "Apellido: {Apellido}, " +
-                    $"Edad: {Edad}, " +
+                    $"Apellido: {Apellido}, " +
                     $"Medico Asignado: {(MedicoAsignado == null ? "Ninguno" : MedicoAsignado.Nombre + " " + MedicoAsignado.Apellido)}.";
         }
     }
