@@ -20,6 +20,11 @@ namespace Hospital
                 Console.Write("Ingrese una opción: ");
                 input = Console.ReadLine();
 
+                if (input == "exit")
+                {
+                    break;
+                }        
+
                 int.TryParse(input, out opcion);
                 switch (opcion)
                 {
@@ -30,10 +35,10 @@ namespace Hospital
                         DarBajaMedico(hospital);
                         break;
                     case 3:
-                        //AsignarMedicoAPaciente();
+                        DarAltaPaciente(hospital);
                         break;
                     case 4:
-                        //ListarInformacion();
+                        DarBajaPaciente(hospital);
                         break;
                     case 5:
                         //VerListaDePersonas();
@@ -43,7 +48,7 @@ namespace Hospital
                         break;
                 }
             }
-            Console.WriteLine("Haz salido del programa. Presiona cualquier tecla para continuar...");
+            Console.WriteLine("Haz CERRADO del programa. Presiona cualquier tecla para continuar...");
             Console.ReadKey();
         }
         
@@ -67,7 +72,9 @@ namespace Hospital
             Console.WriteLine("8. Listar los pacientes de un médico");
             Console.WriteLine("10. Listar todas las personas del hospital");
             Console.WriteLine("-------------------------------------------------------");
+            Console.WriteLine();
             Console.WriteLine("escriba *exit* para salir");
+            Console.WriteLine();
         }
         static void DarAltaMedico(Hospital hospital)
         {
@@ -89,7 +96,7 @@ namespace Hospital
 
             Console.WriteLine("Medico agregado exitosamente:");
             Console.WriteLine(medico.ToString());
-            Continuar();
+            VolverAlMenuPrincipal();
         }
 
         static void DarBajaMedico(Hospital hospital)
@@ -117,12 +124,77 @@ namespace Hospital
                 Console.WriteLine("No se encontró un medico con ese nombre y apellido.");
             }
 
-            Continuar();
+            VolverAlMenuPrincipal();
         }
 
-        static void Continuar()
+        static void DarAltaPaciente()
         {
-            Console.WriteLine("Presiona cualquier tecla para continuar para volver al menu principal");
+            Console.Clear();
+            Console.WriteLine("Ingrese el nombre del paciente:");
+            string nombre = Console.ReadLine();
+
+            Console.WriteLine("Ingrese el apellido del paciente:");
+            string apellido = Console.ReadLine();
+
+            Console.WriteLine("Ingrese la edad del paciente:");
+            int edad = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Ingrese el nombre del medico asignado:");
+            string nombreMedico = Console.ReadLine();
+
+            Console.WriteLine("Ingrese el apellido del medico asignado:");
+            string apellidoMedico = Console.ReadLine();
+
+            Medico medicoAsignado = hospital.Medicos
+                .FirstOrDefault(m => m.Nombre.Equals(nombreMedico, StringComparison.OrdinalIgnoreCase) &&
+                                     m.Apellido.Equals(apellidoMedico, StringComparison.OrdinalIgnoreCase));
+            if (medicoAsignado == null)
+                {
+                Console.WriteLine("No se encontró un medico con ese nombre y apellido. El paciente no tendrá medico asignado.");
+            }
+
+            Paciente paciente = new Paciente(nombre, apellido, edad);
+
+            paciente.MedicoAsignado = medicoAsignado;
+
+            hospital.AltaPaciente(paciente);
+            Console.WriteLine("Paciente agregado exitosamente:");
+            Console.WriteLine(paciente.ToString());
+
+            VolverAlMenuPrincipal();
+        }
+
+        static void DarBajaPaciente(Hospital hospital)
+        {
+            Console.Clear();
+            Console.WriteLine("Ingrese el nombre del paciente a dar de baja:");
+            string nombre = Console.ReadLine();
+
+            Console.WriteLine("Ingrese el apellido del paciente a dar de baja:");
+            string apellido = Console.ReadLine();
+
+            Paciente paciente = hospital.Pacientes
+                .FirstOrDefault(p => p.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase) &&
+                                     p.Apellido.Equals(apellido, StringComparison.OrdinalIgnoreCase));
+            
+            if (paciente != null)
+            {
+                hospital.BajaPaciente(paciente);
+                Console.WriteLine("Paciente dado de baja exitosamente:");
+                Console.WriteLine(paciente.ToString());
+            }
+            else
+            {
+                Console.WriteLine("No se encontró un paciente con ese nombre y apellido.");
+            }
+
+            VolverAlMenuPrincipal();
+        }
+
+        static void VolverAlMenuPrincipal()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
             Console.ReadKey();
         }
 
