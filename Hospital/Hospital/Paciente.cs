@@ -11,11 +11,13 @@ namespace Hospital
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public Medico MedicoAsignado { get; set; }
+        public List<Cita> Citas { get; set; }
         public Paciente(string nombre, string apellido)
         {
             Nombre = nombre;
             Apellido = apellido;
             MedicoAsignado = null;
+            Citas = new List<Cita>();
         }
 
         // se hace un override del metodo ToString para mostrar la informacion del paciente

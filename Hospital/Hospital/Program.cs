@@ -20,6 +20,8 @@ namespace Hospital
                 Console.Write("Ingrese una opción: ");
                 input = Console.ReadLine();
 
+                Console.WriteLine();
+
                 if (input == "exit")
                 {
                     break;
@@ -67,7 +69,8 @@ namespace Hospital
         static void MostrarMenu()
         {
             //Console.Clear();
-            Console.WriteLine("-------------------------------------------------------");
+            Console.WriteLine("=======================================================");
+            Console.WriteLine();
             Console.WriteLine("Bienvenido al sistema de Gestión de Médicos y Pacientes");
             Console.WriteLine("Seleccione una opcion:");
             Console.WriteLine("-------------------------------------------------------");
@@ -90,12 +93,13 @@ namespace Hospital
             Console.WriteLine();
             Console.WriteLine("escriba *exit* para salir");
             Console.WriteLine();
+            Console.WriteLine("=======================================================");
         }
         static void DarAltaMedico(Hospital hospital)
         {
             //Console.Clear();
 
-            Console.WriteLine("==== ALTA MEDICO =====");
+            Console.WriteLine("=========================================== ALTA MEDICO");
             Console.Write("Ingrese el nombre del medico: ");
             string nombre = Console.ReadLine();
 
@@ -116,8 +120,7 @@ namespace Hospital
         static void DarBajaMedico(Hospital hospital)
         {
             //Console.Clear();
-
-            Console.WriteLine("==== BAJA MEDICO =====");
+            Console.WriteLine("=========================================== BAJA MEDICO");
             Console.Write("Ingrese el nombre del medico a dar de baja: ");
             string nombre = Console.ReadLine();
 
@@ -146,8 +149,7 @@ namespace Hospital
         static void DarAltaPaciente(Hospital hospital)
         {
             //Console.Clear();
-
-            Console.WriteLine("==== ALTA PACIENTE =====");
+            Console.WriteLine("========================================= ALTA PACIENTE");
             Console.Write("Ingrese el nombre del paciente: ");
             string nombre = Console.ReadLine();
 
@@ -184,8 +186,7 @@ namespace Hospital
         static void DarBajaPaciente(Hospital hospital)
         {
             //Console.Clear();
-
-            Console.WriteLine("==== BAJA PACIENTE =====");
+            Console.WriteLine("========================================= BAJA PACIENTE");
             Console.Write("Ingrese el nombre del paciente a dar de baja: ");
             string nombre = Console.ReadLine();
 
@@ -213,8 +214,7 @@ namespace Hospital
         static void AsignarMedicoAPaciente(Hospital hospital)
         {
             //Console.Clear();
-
-            Console.WriteLine("==== ASIGNAR MEDICO A PACIENTE =====");
+            Console.WriteLine("============================= ASIGNAR MEDICO A PACIENTE");
             Console.Write("Ingrese el nombre del paciente: ");
             string nombrePaciente = Console.ReadLine();
 
@@ -262,8 +262,7 @@ namespace Hospital
         static void ListarMedicos(Hospital hospital)
         {
             //Console.Clear();
-
-            Console.WriteLine("==== LISTA DE MEDICOS =====");
+            Console.WriteLine("====================================== LISTA DE MEDICOS");
             int index = 1;
             foreach (var medico in hospital.Medicos)
             {
@@ -286,8 +285,7 @@ namespace Hospital
         static void ListarPacientesDeMedico(Hospital hospital)
         {
             //Console.Clear();
-
-            Console.WriteLine("==== LISTA DE PACIENTES DE UN MEDICO =====");
+            Console.WriteLine("======================= LISTA DE PACIENTES DE UN MEDICO");
             Console.WriteLine("Ingrese el nombre del medico:");
             string nombreMedico = Console.ReadLine();
 
@@ -318,8 +316,7 @@ namespace Hospital
         static void ListarPersonasDelHospital(Hospital hospital)
         {
             //Console.Clear();
-
-            Console.WriteLine("==== LISTA DE MEDICOS Y PACIENTES DEL HOSPITAL =====");
+            Console.WriteLine("============= LISTA DE MEDICOS Y PACIENTES DEL HOSPITAL");
             Console.WriteLine("Médicos:");
             int indexMedicos = 1;
             foreach (var medico in hospital.Medicos)

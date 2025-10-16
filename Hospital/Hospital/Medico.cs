@@ -9,13 +9,16 @@ namespace Hospital
     public class Medico : Persona
     {
         public string Especialidad { get; set; }
+
         public List<Paciente> PacientesAsignados { get; set; }
+        public List<Cita> Citas { get; set; }
 
         public Medico(string nombre, string apellido, string especialidad)
             : base(nombre, apellido)
         {
             Especialidad = especialidad;
             PacientesAsignados = new List<Paciente>();
+            Citas = new List<Cita>();
         }
 
         // se hace un override del metodo ToString para mostrar la informacion del medico
