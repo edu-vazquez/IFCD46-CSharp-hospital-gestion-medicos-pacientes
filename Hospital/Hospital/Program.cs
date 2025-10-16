@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Hospital
 {
@@ -9,8 +11,6 @@ namespace Hospital
         static Hospital hospital = new Hospital();
         static void Main(string[] args)
         {
-            
-
             int opcion = 0;
             string input = "";
 
@@ -66,7 +66,7 @@ namespace Hospital
         
         static void MostrarMenu()
         {
-            Console.Clear();
+            //Console.Clear();
             Console.WriteLine("-------------------------------------------------------");
             Console.WriteLine("Bienvenido al sistema de Gestión de Médicos y Pacientes");
             Console.WriteLine("Seleccione una opcion:");
@@ -84,13 +84,16 @@ namespace Hospital
             Console.WriteLine("8. Listar los pacientes de un médico");
             Console.WriteLine("9. Listar medicos y pacientes del hospital");
             Console.WriteLine("-------------------------------------------------------");
+            Console.WriteLine("10. Gestión de citas");
+            Console.WriteLine("11. Gestión de historial médico");
+            Console.WriteLine("-------------------------------------------------------");
             Console.WriteLine();
             Console.WriteLine("escriba *exit* para salir");
             Console.WriteLine();
         }
         static void DarAltaMedico(Hospital hospital)
         {
-            Console.Clear();
+            //Console.Clear();
 
             Console.WriteLine("==== ALTA MEDICO =====");
             Console.Write("Ingrese el nombre del medico: ");
@@ -112,7 +115,7 @@ namespace Hospital
 
         static void DarBajaMedico(Hospital hospital)
         {
-            Console.Clear();
+            //Console.Clear();
 
             Console.WriteLine("==== BAJA MEDICO =====");
             Console.Write("Ingrese el nombre del medico a dar de baja: ");
@@ -142,7 +145,7 @@ namespace Hospital
 
         static void DarAltaPaciente(Hospital hospital)
         {
-            Console.Clear();
+            //Console.Clear();
 
             Console.WriteLine("==== ALTA PACIENTE =====");
             Console.Write("Ingrese el nombre del paciente: ");
@@ -180,7 +183,7 @@ namespace Hospital
 
         static void DarBajaPaciente(Hospital hospital)
         {
-            Console.Clear();
+            //Console.Clear();
 
             Console.WriteLine("==== BAJA PACIENTE =====");
             Console.Write("Ingrese el nombre del paciente a dar de baja: ");
@@ -209,7 +212,7 @@ namespace Hospital
         
         static void AsignarMedicoAPaciente(Hospital hospital)
         {
-            Console.Clear();
+            //Console.Clear();
 
             Console.WriteLine("==== ASIGNAR MEDICO A PACIENTE =====");
             Console.Write("Ingrese el nombre del paciente: ");
@@ -258,7 +261,7 @@ namespace Hospital
 
         static void ListarMedicos(Hospital hospital)
         {
-            Console.Clear();
+            //Console.Clear();
 
             Console.WriteLine("==== LISTA DE MEDICOS =====");
             int index = 1;
@@ -270,7 +273,7 @@ namespace Hospital
         }
         static void ListarPacientes(Hospital hospital)
         {
-            Console.Clear();
+            //Console.Clear();
             Console.WriteLine("Lista de Pacientes:");
             int index = 1;
             foreach (var paciente in hospital.Pacientes)
@@ -282,7 +285,7 @@ namespace Hospital
 
         static void ListarPacientesDeMedico(Hospital hospital)
         {
-            Console.Clear();
+            //Console.Clear();
 
             Console.WriteLine("==== LISTA DE PACIENTES DE UN MEDICO =====");
             Console.WriteLine("Ingrese el nombre del medico:");
@@ -314,7 +317,7 @@ namespace Hospital
 
         static void ListarPersonasDelHospital(Hospital hospital)
         {
-            Console.Clear();
+            //Console.Clear();
 
             Console.WriteLine("==== LISTA DE MEDICOS Y PACIENTES DEL HOSPITAL =====");
             Console.WriteLine("Médicos:");
