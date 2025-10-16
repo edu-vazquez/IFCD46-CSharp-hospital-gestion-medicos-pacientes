@@ -9,12 +9,10 @@ namespace Hospital
 {
     internal class Hospital
     {
-        public List<Medico> Medicos { get; set; }
-        public List<Paciente> Pacientes { get; set; }
+        public List<Persona> Personas { get; set; }
         public Hospital()
         {
-            Medicos = new List<Medico>();
-            Pacientes = new List<Paciente>();
+            Personas = new List<Persona>();
         }
 
         public void AltaMedico()
@@ -32,10 +30,8 @@ namespace Hospital
             string especialidad = Console.ReadLine();
 
             Medico medico = new Medico(nombre, apellido, especialidad);
-            this.Medicos.Add(medico);
 
-            Console.Write("Medico agregado exitosamente: ");
-            Console.WriteLine(medico.ToString());
+            this.Personas.Add(medico);
         }
 
         public void BajaMedico()
@@ -48,13 +44,13 @@ namespace Hospital
             Console.Write("Ingrese el apellido del medico a dar de baja: ");
             string apellido = Console.ReadLine();
 
-            Medico medico = this.Medicos
+            Persona medico = this.Personas
                 .FirstOrDefault(m => m.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase) &&
                                      m.Apellido.Equals(apellido, StringComparison.OrdinalIgnoreCase));
 
             if (medico != null)
             {
-                this.Medicos.Remove(medico);
+                this.Personas.Remove(medico);
                 Console.Write("Medico dado de baja exitosamente: ");
                 Console.WriteLine(medico.ToString());
                 Console.WriteLine();
@@ -81,7 +77,7 @@ namespace Hospital
             Console.Write("Ingrese el apellido del medico asignado: ");
             string apellidoMedico = Console.ReadLine();
 
-            Medico medicoAsignado = this.Medicos
+            Medico medicoAsignado = (Medico)this.Personas
                 .FirstOrDefault(m => m.Nombre.Equals(nombreMedico, StringComparison.OrdinalIgnoreCase) &&
                                      m.Apellido.Equals(apellidoMedico, StringComparison.OrdinalIgnoreCase));
             if (medicoAsignado == null)
@@ -93,12 +89,11 @@ namespace Hospital
 
             paciente.MedicoAsignado = medicoAsignado;
 
-            this.Pacientes.Add(paciente);
+            this.Personas.Add(paciente);
 
             Console.Write("Paciente agregado exitosamente: ");
             Console.WriteLine(paciente.ToString());
             Console.WriteLine();
-
         }
 
         public void BajaPaciente()
@@ -111,13 +106,13 @@ namespace Hospital
             Console.Write("Ingrese el apellido del paciente a dar de baja: ");
             string apellido = Console.ReadLine();
 
-            Paciente paciente = this.Pacientes
+            Paciente paciente =(Paciente) this.Personas
                 .FirstOrDefault(p => p.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase) &&
                                      p.Apellido.Equals(apellido, StringComparison.OrdinalIgnoreCase));
 
             if (paciente != null)
             {
-                this.Pacientes.Remove(paciente);
+                this.Personas.Remove(paciente);
                 Console.Write("Paciente dado de baja exitosamente: ");
                 Console.WriteLine(paciente.ToString());
             }
@@ -138,7 +133,7 @@ namespace Hospital
             Console.Write("Ingrese el apellido del paciente: ");
             string apellidoPaciente = Console.ReadLine();
 
-            Paciente paciente = this.Pacientes
+            Paciente paciente = (Paciente)this.Personas
                 .FirstOrDefault(p => p.Nombre.Equals(nombrePaciente, StringComparison.OrdinalIgnoreCase) &&
                                      p.Apellido.Equals(apellidoPaciente, StringComparison.OrdinalIgnoreCase));
 
@@ -154,7 +149,7 @@ namespace Hospital
             Console.Write("Ingrese el apellido del medico a asignar: ");
             string apellidoMedico = Console.ReadLine();
 
-            Medico medico = this.Medicos
+            Medico medico = (Medico)this.Personas
                 .FirstOrDefault(m => m.Nombre.Equals(nombreMedico, StringComparison.OrdinalIgnoreCase) &&
                                      m.Apellido.Equals(apellidoMedico, StringComparison.OrdinalIgnoreCase));
 
@@ -178,7 +173,7 @@ namespace Hospital
             //Console.Clear();
             Console.WriteLine("====================================== LISTA DE MEDICOS");
             int index = 1;
-            foreach (var medico in this.Medicos)
+            foreach (var medico in this.Personas)
             {
                 Console.WriteLine($"{index++} - {medico.ToString()}");
             }
@@ -188,7 +183,7 @@ namespace Hospital
             //Console.Clear();
             Console.WriteLine("Lista de Pacientes:");
             int index = 1;
-            foreach (var paciente in this.Pacientes)
+            foreach (var paciente in this.Personas)
             {
                 Console.WriteLine($"{index++} - {paciente.ToString()}");
             }
@@ -204,7 +199,7 @@ namespace Hospital
             Console.WriteLine("Ingrese el apellido del medico:");
             string apellidoMedico = Console.ReadLine();
 
-            Medico medico = this.Medicos
+            Medico medico = (Medico)this.Personas
                 .FirstOrDefault(m => m.Nombre.Equals(nombreMedico, StringComparison.OrdinalIgnoreCase) &&
                                      m.Apellido.Equals(apellidoMedico, StringComparison.OrdinalIgnoreCase));
 
@@ -229,17 +224,50 @@ namespace Hospital
             Console.WriteLine("============= LISTA DE MEDICOS Y PACIENTES DEL HOSPITAL");
             Console.WriteLine("Médicos:");
             int indexMedicos = 1;
-            foreach (var medico in this.Medicos)
+            foreach (var medico in this.Personas)
             {
-                Console.WriteLine($"{indexMedicos} - {medico.ToString()}");
+                if (medico is Medico)
+                    Console.WriteLine($"{indexMedicos} - {medico.ToString()}");
+                
             }
             Console.WriteLine();
             Console.WriteLine("Pacientes:");
             int indexPacientes = 1;
-            foreach (var paciente in this.Pacientes)
+            foreach (var paciente in this.Personas)
             {
-                Console.WriteLine($"{indexPacientes} - {paciente.ToString()}");
+                if (paciente is Paciente)
+                    Console.WriteLine($"{indexPacientes} - {paciente.ToString()}");
             }
+        }
+
+        public void GestionCitas()
+        {
+            //Console.Clear();
+            Console.WriteLine("============================= GESTION DE CITAS");
+            Console.Write("Ingrese el nombre del paciente: ");
+            string nombrePaciente = Console.ReadLine();
+
+            Console.Write("Ingrese el apellido del paciente: ");
+            string apellidoPaciente = Console.ReadLine();
+
+            Paciente paciente = (Paciente)this.Personas
+                .FirstOrDefault(p => p.Nombre.Equals(nombrePaciente, StringComparison.OrdinalIgnoreCase) &&
+                                     p.Apellido.Equals(apellidoPaciente, StringComparison.OrdinalIgnoreCase));
+
+            if (paciente == null)
+                {
+                Console.WriteLine("No se encontró un paciente con ese nombre y apellido.");
+                return;
+            }
+            if (paciente.MedicoAsignado == null)
+            {
+                Console.WriteLine("El paciente no tiene un médico asignado.");
+                this.AsignarMedicoAPaciente();
+                return;
+            }
+            
+            Console.WriteLine($"Paciente encontrado: {paciente.ToString()}");
+            Console.WriteLine($"Médico asignado: {paciente.MedicoAsignado.ToString()}");
         }
     }
 }

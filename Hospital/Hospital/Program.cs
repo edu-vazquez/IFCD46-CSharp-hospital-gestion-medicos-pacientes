@@ -58,10 +58,10 @@ namespace Hospital
                         hospital.ListarPersonasDelHospital();
                         break;
                     case 10:
-                        //GestionCitas(hospital);
+                        hospital.GestionCitas();
                         break; 
                     case 11:
-                        //GestionHistorialMedico(hospital);
+                        hospital.GestionHistorialMedico();
                         break;
                     default:
                         Console.WriteLine("Opción inválida. Por favor, intente de nuevo.");

@@ -13,10 +13,10 @@ namespace Hospital
         public Medico Medico { get; set; }
         public Paciente Paciente { get; set; }
 
-        public Cita(DateTime inicio, DateTime fin, Medico medico, Paciente paciente)
+        public Cita(DateTime inicio, Medico medico, Paciente paciente)
         {
             Inicio = inicio;
-            Fin = fin;
+            Fin = inicio.AddMinutes(30); // Asumiendo que cada cita dura 30 minutos
             Medico = medico;
             Paciente = paciente;
         }

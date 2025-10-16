@@ -6,18 +6,26 @@ using System.Threading.Tasks;
 
 namespace Hospital
 {
-    public class Paciente
+    public class Paciente : Persona
     {
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
         public Medico MedicoAsignado { get; set; }
         public List<Cita> Citas { get; set; }
-        public Paciente(string nombre, string apellido)
+        public Paciente(string nombre, string apellido) : base(nombre, apellido)
         {
             Nombre = nombre;
             Apellido = apellido;
             MedicoAsignado = null;
             Citas = new List<Cita>();
+        }
+
+        public void AsignarMedico(Medico medico)
+        {
+            MedicoAsignado = medico;
+        }
+
+        public void AgregarCita(Cita cita)
+        {
+            Citas.Add(cita);
         }
 
         // se hace un override del metodo ToString para mostrar la informacion del paciente
