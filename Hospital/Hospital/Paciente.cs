@@ -8,14 +8,25 @@ namespace Hospital
 {
     public class Paciente : Persona
     {
-        public Medico MedicoAsignado { get; set; }
-        public List<Cita> Citas { get; set; }
+        public static Medico MedicoAsignado { get; set; }
+        public static List<Cita> Citas { get; set; }
         public Paciente(string nombre, string apellido) : base(nombre, apellido)
         {
             Nombre = nombre;
             Apellido = apellido;
             MedicoAsignado = null;
             Citas = new List<Cita>();
+        }
+
+        public static Paciente Crear()
+        {
+            Console.WriteLine("Ingrese el nombre del paciente:");
+            string nombre = Console.ReadLine();
+
+            Console.WriteLine("Ingrese el apellido del paciente:");
+            string apellido = Console.ReadLine();
+
+            return new Paciente(nombre, apellido);
         }
 
         public void AsignarMedico(Medico medico)

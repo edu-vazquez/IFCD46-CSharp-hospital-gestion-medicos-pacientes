@@ -61,7 +61,7 @@ namespace Hospital
                         hospital.GestionCitas();
                         break; 
                     case 11:
-                        hospital.GestionHistorialMedico();
+                        //hospital.GestionHistorialMedico();
                         break;
                     default:
                         Console.WriteLine("Opción inválida. Por favor, intente de nuevo.");
