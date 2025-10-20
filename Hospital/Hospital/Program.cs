@@ -102,7 +102,6 @@ namespace Hospital
             Console.WriteLine();
             Console.WriteLine("=======================================================");
         }
-        
 
         static void VolverAlMenuPrincipal()
         {
@@ -110,6 +109,5 @@ namespace Hospital
             Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
             Console.ReadKey();
         }
-
     }
 }

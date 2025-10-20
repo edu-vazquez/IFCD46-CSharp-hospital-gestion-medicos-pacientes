@@ -21,6 +21,20 @@ namespace Hospital
             Citas = new List<Cita>();
         }
 
+        public static Medico CrearMedico()
+        {
+            Console.WriteLine("Ingrese el nombre del medico:");
+            string nombre = Console.ReadLine();
+            
+            Console.WriteLine("Ingrese el apellido del medico:");
+            string apellido = Console.ReadLine();
+            
+            Console.WriteLine("Ingrese la especialidad del medico:");
+            string especialidad = Console.ReadLine();
+            
+            return new Medico(nombre, apellido, especialidad);
+        }
+
         // se hace un override del metodo ToString para mostrar la informacion del medico
         // o sino el metodo ToString devuelve el nombre completo de la clase
         public override string ToString()

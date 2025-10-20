@@ -8,8 +8,11 @@ namespace Hospital
 {
     public class Paciente : Persona
     {
-        public static Medico MedicoAsignado { get; set; }
-        public static List<Cita> Citas { get; set; }
+        // In C# 7.3 reference types are nullable by default, so this can hold null.
+        // Also make these instance properties (remove 'static') so each patient has its own assigned doctor and appointments.
+        public Medico MedicoAsignado { get; set; }
+        public List<Cita> Citas { get; set; }
+
         public Paciente(string nombre, string apellido) : base(nombre, apellido)
         {
             Nombre = nombre;
